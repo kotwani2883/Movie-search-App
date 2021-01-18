@@ -1,0 +1,7 @@
+1.Cannot read property 'map' of undefined
+--->Inital state
+2.Nothing was returned from render. This usually means a return statement is missing. Or, to render nothing, return null
+Render was not enclosed here-->My bad
+3.Also got to know about `the useEffect hook as a side functionality for fetching data from the omdb Movie API
+4.Securing API KEY IS MUST
+5.res.json() also returns a promise ,if not handling geting an error 

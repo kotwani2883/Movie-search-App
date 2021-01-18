@@ -4,8 +4,10 @@ import Header from "./Header";
 import Movie from "./Movie";
 import Search from "./Search";
 
+const api=process.env.API_KEY;
 
-const MOVIE_API_URL = "https://www.omdbapi.com/?s=Science&apikey=8e9d3f61"; // you should replace this with yours
+
+const MOVIE_API_URL = `https://www.omdbapi.com/?s=Science&apikey=8e9d3f61`; 
 
 
 const App = () => {
@@ -29,7 +31,7 @@ const App = () => {
     setLoading(true);
     setErrorMessage(null);
 
-    fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=8e9d3f61`)
+    fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=${api}`)
       .then(response => response.json())
       .then(jsonResponse => {
         if (jsonResponse.Response === "True") {
@@ -45,17 +47,11 @@ const App = () => {
     
     return (
      <div className="App">
-      <Header text="HOOKED" />
+      <Header text="Search Your fav movie!!" />
       <Search search={search} />
       <p className="App-intro">Sharing a few of our favourite movies</p>
       <div className="movies">
-        {loading && !errorMessage ? (
-         <span>loading...</span>
-         ) : errorMessage ? (
-          <div className="errorMessage">{errorMessage}</div>
-        ) : (
-          movies.map((movie, index) => (
-            <Movie key={`${index}-${movie.Title}`} movie={movie} />
+{loading && !errorMessage ? (<span>loading...</span>) : errorMessage ? (<div className="errorMessage">{errorMessage}</div>) :(movies.map((movie, index) => (<Movie movie={movie}  key={`${index}-${movie.Title}`} />
           ))
         )}
       </div>
