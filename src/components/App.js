@@ -4,7 +4,7 @@ import Header from "./Header";
 import Movie from "./Movie";
 import Search from "./Search";
 
-const api=process.env.API_KEY;
+
 
 
 const MOVIE_API_URL = `https://www.omdbapi.com/?s=Science&apikey=8e9d3f61`; 
@@ -31,7 +31,7 @@ const App = () => {
     setLoading(true);
     setErrorMessage(null);
 
-    fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=${api}`)
+    fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=8e9d3f61`)
       .then(response => response.json())
       .then(jsonResponse => {
         if (jsonResponse.Response === "True") {

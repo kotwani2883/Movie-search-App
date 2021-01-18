@@ -25,7 +25,7 @@ const  Search=(props)=>{
         <form className="search">
             <TextField  id="standard-basic" label="Your Searched Movie" value={searchValue} onChange={handleSearchInputChanges} type="text" placeholder="Type in movie Here"/>
    
-            <Button variant="contained" color="primary" onClick={callSearchFunction} type="submit" size="small" > Find </Button>
+            <Button variant="outlined" onClick={callSearchFunction} type="submit" size="small" > Find </Button>
         </form>
     );
 };
